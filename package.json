@@ -1,0 +1,21 @@
+{
+  "name": "english-app",
+  "version": "1.0.0",
+  "description": "Aplicación para aprender inglés con autenticación",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server -p 3000 -c-1 -o index.html",
+    "dev": "http-server -p 3000 -c-1",
+    "build": "echo 'Build script ready'"
+  },
+  "keywords": [
+    "english",
+    "learning",
+    "app"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

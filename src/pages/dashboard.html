@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - English App</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-content">
+        <h1>Aprende Inglés Gratis</h1>
+        <div class="header-user">
+          <span id="userEmail" class="user-email"></span>
+          <button class="logout-btn" onclick="handleLogout()">
+            Cerrar Sesión
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-container">
+      <!-- NIVELES DE APRENDIZAJE -->
+      <section class="levels-section">
+        <h2>Elige tu nivel</h2>
+        <div class="levels-grid">
+          <div class="level-card">
+            <div class="level-icon">🌱</div>
+            <h3>Nivel Básico</h3>
+            <p>Para comenzar desde cero</p>
+            <button class="btn btn-secondary">Comenzar</button>
+          </div>
+          <div class="level-card">
+            <div class="level-icon">📈</div>
+            <h3>Nivel Intermedio</h3>
+            <p>Para mejorar tus habilidades</p>
+            <button class="btn btn-secondary">Comenzar</button>
+          </div>
+          <div class="level-card">
+            <div class="level-icon">🚀</div>
+            <h3>Nivel Avanzado</h3>
+            <p>Domina el idioma</p>
+            <button class="btn btn-secondary">Comenzar</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- CURSOS DESTACADOS -->
+      <section class="courses-section">
+        <h2>Cursos Populares</h2>
+        <div class="courses-grid">
+          <div class="course-card">
+            <div class="course-image" style="background: #ff6b6b"></div>
+            <h3>Inglés de Negocios</h3>
+            <p>Aprende vocabulario profesional y expresiones de negocios</p>
+            <span class="course-level">Intermedio</span>
+          </div>
+          <div class="course-card">
+            <div class="course-image" style="background: #4ecdc4"></div>
+            <h3>Conversación Diaria</h3>
+            <p>Practica conversaciones del día a día</p>
+            <span class="course-level">Básico</span>
+          </div>
+          <div class="course-card">
+            <div class="course-image" style="background: #45b7d1"></div>
+            <h3>Gramática Completa</h3>
+            <p>Domina las reglas gramaticales del inglés</p>
+            <span class="course-level">Avanzado</span>
+          </div>
+          <div class="course-card">
+            <div class="course-image" style="background: #f9ca24"></div>
+            <h3>Pronunciación</h3>
+            <p>Mejora tu pronunciación con ejercicios prácticos</p>
+            <span class="course-level">Básico</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROGRESO -->
+      <section class="progress-section">
+        <h2>Tu Progreso</h2>
+        <div class="progress-card">
+          <h3>Racha de aprendizaje</h3>
+          <div class="progress-stat">
+            <span class="stat-number">7</span>
+            <span class="stat-label">días seguidos</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 70%"></div>
+          </div>
+          <p>¡Sigue así! Vas muy bien 🎉</p>
+        </div>
+      </section>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/app.js"></script>
+  </body>
+</html>
