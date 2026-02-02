@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curso Básico de Inglés - Nivel Principiante</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="css/beginner.css" />
+  </head>
+  <body>
+    <div class="beginner-container">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <span class="sidebar-icon">🌍</span>
+          <a href="/src/pages/dashboard.html" data-lesson="pronouns">English</a>
+        </div>
+
+        <nav class="nav-section">
+          <div class="nav-section-title">🎓 Nivel Principiante</div>
+          <ul class="nav-links">
+            <li><a href="index.html" class="active">📚 Inicio del Curso</a></li>
+          </ul>
+        </nav>
+
+        <nav class="nav-section">
+          <div class="nav-section-title">📖 Temas</div>
+          <ul class="nav-links">
+            <li>
+              <a href="lessons/pronouns.html" data-lesson="pronouns"
+                >👤 Pronouns</a
+              >
+            </li>
+            <li>
+              <a href="lessons/articles.html" data-lesson="articles"
+                >📖 The Articles</a
+              >
+            </li>
+            <li>
+              <a href="lessons/prepositions.html" data-lesson="prepositions"
+                >📍 Prepositions</a
+              >
+            </li>
+            <li>
+              <a href="lessons/verbs.html" data-lesson="verbs">⚡ Verbs</a>
+            </li>
+            <li>
+              <a href="lessons/adjectives.html" data-lesson="adjectives"
+                >✨ Adjectives</a
+              >
+            </li>
+            <li>
+              <a
+                href="lessons/sentence-structure.html"
+                data-lesson="sentenceStructure"
+                >📝 Sentence Structure</a
+              >
+            </li>
+            <li>
+              <a href="lessons/tenses.html" data-lesson="tenses"
+                >⏰ Tense Time</a
+              >
+            </li>
+            <li>
+              <a href="lessons/numbers.html" data-lesson="numbers"
+                >🔢 Numbers & Dates</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="nav-section">
+          <div class="nav-section-title">🔗 Navegación</div>
+          <ul class="nav-links">
+            <li><a href="/src/pages/dashboard.html">📊 Dashboard</a></li>
+            <li><a href="../../index.html">🏠 Inicio</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="main-content">
+        <div class="content-header">
+          <div>
+            <h1>📚 Curso Básico de Inglés</h1>
+            <p style="color: var(--text-secondary); margin-top: 5px">
+              Para los que están empezando
+            </p>
+          </div>
+          <div class="progress-badge">
+            <span class="progress-number" id="progress-count">0/8</span>
+            <span class="progress-text">Tópicos Visitados</span>
+          </div>
+        </div>
+
+        <!-- Introducción -->
+        <div
+          style="
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+          "
+        >
+          <h2
+            style="
+              color: var(--primary-color);
+              margin-bottom: 15px;
+              font-size: 1.3em;
+            "
+          >
+            ✨ Bienvenido al Curso
+          </h2>
+          <p
+            style="
+              color: var(--text-primary);
+              line-height: 1.8;
+              font-size: 1.05em;
+            "
+          >
+            Este curso está diseñado para ti si estás empezando a aprender
+            inglés desde cero. Cubriremos los conceptos fundamentales del
+            idioma, desde pronombres hasta tiempos verbales, de una forma
+            sencilla y progresiva.
+          </p>
+          <p
+            style="
+              color: var(--text-secondary);
+              line-height: 1.8;
+              margin-top: 15px;
+            "
+          >
+            Cada lección contiene explicaciones detalladas, ejemplos prácticos y
+            puedes navegar a tu propio ritmo. No hay presión, solo aprendizaje
+            consistente y divertido.
+          </p>
+        </div>
+
+        <!-- Grid de Lecciones -->
+        <div class="lessons-grid" id="lessons-container">
+          <!-- Se llenará con JavaScript -->
+        </div>
+
+        <!-- Consejos para el Aprendizaje -->
+        <div
+          style="
+            background: linear-gradient(
+              135deg,
+              rgba(72, 187, 120, 0.1),
+              rgba(48, 140, 77, 0.1)
+            );
+            border-left: 4px solid var(--success-color);
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 40px;
+          "
+        >
+          <h2
+            style="
+              color: var(--text-primary);
+              margin-bottom: 20px;
+              font-size: 1.2em;
+            "
+          >
+            💡 Consejos para Aprender Mejor
+          </h2>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+              gap: 20px;
+            "
+          >
+            <div>
+              <h3 style="color: var(--success-color); margin-bottom: 10px">
+                📖 Lee y Repasa
+              </h3>
+              <p style="color: var(--text-secondary)">
+                Tómate tu tiempo para leer cada concepto cuidadosamente. Repasa
+                lo que aprendiste regularmente.
+              </p>
+            </div>
+            <div>
+              <h3 style="color: var(--success-color); margin-bottom: 10px">
+                🎯 Practica Ejemplos
+              </h3>
+              <p style="color: var(--text-secondary)">
+                Intenta crear tus propias oraciones usando los ejemplos como
+                referencia. La práctica es clave.
+              </p>
+            </div>
+            <div>
+              <h3 style="color: var(--success-color); margin-bottom: 10px">
+                🔁 Consistencia
+              </h3>
+              <p style="color: var(--text-secondary)">
+                Estudia un poco cada día, en lugar de todo de una vez. La
+                consistencia vence a la intensidad.
+              </p>
+            </div>
+            <div>
+              <h3 style="color: var(--success-color); margin-bottom: 10px">
+                🗣️ Habla en Voz Alta
+              </h3>
+              <p style="color: var(--text-secondary)">
+                Pronuncia las palabras y oraciones en voz alta. Esto ayuda con
+                la pronunciación y la memoria.
+              </p>
+            </div>
+            <div>
+              <h3 style="color: var(--success-color); margin-bottom: 10px">
+                ✍️ Toma Notas
+              </h3>
+              <p style="color: var(--text-secondary)">
+                Anota lo que aprendas. Escribir refuerza la memoria y la
+                comprensión.
+              </p>
+            </div>
+            <div>
+              <h3 style="color: var(--success-color); margin-bottom: 10px">
+                🤝 Practica con Otros
+              </h3>
+              <p style="color: var(--text-secondary)">
+                Si puedes, practica con amigos o en grupos. El diálogo real es
+                invaluable.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Orden Recomendado -->
+        <div
+          style="
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 40px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+          "
+        >
+          <h2
+            style="
+              color: var(--primary-color);
+              margin-bottom: 20px;
+              font-size: 1.2em;
+            "
+          >
+            🎯 Orden de Aprendizaje Recomendado
+          </h2>
+          <p style="color: var(--text-secondary); margin-bottom: 20px">
+            Las lecciones están ordenadas de lo más básico a lo más complejo. Te
+            recomendamos seguir este orden:
+          </p>
+          <ol
+            style="
+              color: var(--text-primary);
+              line-height: 2;
+              margin-left: 20px;
+              font-size: 1.05em;
+            "
+          >
+            <li>
+              <strong>👤 Pronouns</strong> - Comprende los pronombres personales
+            </li>
+            <li>
+              <strong>📖 The Articles</strong> - Aprende a usar a, an, the
+            </li>
+            <li>
+              <strong>📍 Prepositions</strong> - Domina preposiciones de lugar y
+              tiempo
+            </li>
+            <li>
+              <strong>⚡ Verbs</strong> - Conoce verbos básicos y su conjugación
+            </li>
+            <li>
+              <strong>✨ Adjectives</strong> - Describe cosas con adjetivos
+            </li>
+            <li>
+              <strong>📝 Sentence Structure</strong> - Estructura correcta de
+              oraciones
+            </li>
+            <li><strong>⏰ Tense Time</strong> - Domina tiempos verbales</li>
+            <li>
+              <strong>🔢 Numbers & Dates</strong> - Aprende números, fechas y la
+              hora
+            </li>
+          </ol>
+        </div>
+
+        <!-- Footer con navegación -->
+        <div
+          style="
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid var(--border-color);
+            text-align: center;
+          "
+        >
+          <p style="color: var(--text-secondary); margin-bottom: 20px">
+            ¿Listo para empezar? Haz clic en cualquier lección de arriba.
+          </p>
+          <a
+            href="lessons/pronouns.html"
+            class="btn btn-primary"
+            style="margin-right: 10px"
+          >
+            ▶ Comenzar con Pronouns
+          </a>
+        </div>
+      </main>
+    </div>
+
+    <script src="js/course.js"></script>
+    <script>
+      // Script específico para la página index
+      document.addEventListener("DOMContentLoaded", function () {
+        const lessonsContainer = document.getElementById("lessons-container");
+
+        let lessonsHtml = Object.values(beginnerLessons)
+          .map(
+            (lesson, index) => `
+                <div class="lesson-card">
+                    <div class="lesson-icon">${lesson.icon}</div>
+                    <h3>${lesson.title}</h3>
+                    <p class="lesson-description">${lesson.description}</p>
+                    <div class="lesson-meta">
+                        <span class="lesson-duration">⏱ ${lesson.duration}</span>
+                        <span class="completion-status pending">▶ Comenzar</span>
+                    </div>
+                </div>
+            `,
+          )
+          .join("");
+
+        lessonsContainer.innerHTML = lessonsHtml;
+
+        // Agregar event listeners
+        document.querySelectorAll(".lesson-card").forEach((card, index) => {
+          card.style.cursor = "pointer";
+          card.addEventListener("click", function () {
+            const lessonId = Object.keys(beginnerLessons)[index];
+            const lesson = beginnerLessons[lessonId];
+            window.location.href = `lessons/${lessonId}.html`;
+          });
+          card.addEventListener("mouseenter", function () {
+            this.style.transform = "translateY(-8px)";
+          });
+          card.addEventListener("mouseleave", function () {
+            this.style.transform = "translateY(0)";
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
