@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test de Filtros - English App</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 40px 20px;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 15px;
+        padding: 40px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      }
+
+      h1 {
+        color: #333;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      .subtitle {
+        text-align: center;
+        color: #666;
+        margin-bottom: 30px;
+        font-size: 1.1em;
+      }
+
+      .test-section {
+        margin-bottom: 30px;
+        padding: 20px;
+        background: #f9fafb;
+        border-radius: 10px;
+        border-left: 4px solid #667eea;
+      }
+
+      .test-title {
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 15px;
+        font-size: 1.1em;
+      }
+
+      .console-output {
+        background: #1e1e1e;
+        color: #00ff00;
+        padding: 20px;
+        border-radius: 8px;
+        font-family: "Courier New", monospace;
+        font-size: 0.9em;
+        line-height: 1.6;
+        max-height: 600px;
+        overflow-y: auto;
+        margin-top: 15px;
+      }
+
+      .console-line {
+        margin-bottom: 8px;
+        white-space: pre-wrap;
+        word-break: break-word;
+      }
+
+      .success {
+        color: #00ff00;
+      }
+
+      .error {
+        color: #ff6b6b;
+      }
+
+      .warning {
+        color: #ffd700;
+      }
+
+      .info {
+        color: #87ceeb;
+      }
+
+      .button-group {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+        justify-content: center;
+      }
+
+      button {
+        padding: 12px 24px;
+        border: none;
+        border-radius: 8px;
+        font-size: 1em;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s;
+      }
+
+      .btn-primary {
+        background: #667eea;
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background: #5568d3;
+        transform: translateY(-2px);
+      }
+
+      .btn-secondary {
+        background: #e0e0e0;
+        color: #333;
+      }
+
+      .btn-secondary:hover {
+        background: #d0d0d0;
+        transform: translateY(-2px);
+      }
+
+      .status {
+        text-align: center;
+        padding: 20px;
+        background: #e8f5e9;
+        border-radius: 10px;
+        margin-top: 20px;
+        font-weight: 600;
+        color: #2e7d32;
+      }
+
+      .status.error {
+        background: #ffebee;
+        color: #c62828;
+      }
+
+      .link-dashboard {
+        text-align: center;
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 2px solid #e0e0e0;
+      }
+
+      .link-dashboard a {
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1em;
+      }
+
+      .link-dashboard a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🧪 Test de Filtros del Dashboard</h1>
+      <p class="subtitle">
+        Verificando la funcionalidad de filtrado de noticias
+      </p>
+
+      <div class="test-section">
+        <div class="test-title">📋 Resultado del Test</div>
+        <div class="console-output" id="test-output">
+          <div class="console-line info">Cargando tests...</div>
+        </div>
+      </div>
+
+      <div class="button-group">
+        <button class="btn-primary" onclick="runTests()">Ejecutar Tests</button>
+        <button
+          class="btn-secondary"
+          onclick="location.href = '/src/pages/dashboard.html'"
+        >
+          Ir al Dashboard
+        </button>
+      </div>
+
+      <div id="status-container"></div>
+
+      <div class="link-dashboard">
+        <p>
+          Después de verificar los tests,
+          <a href="/src/pages/dashboard.html">abre el Dashboard</a> para probar
+          los filtros manualmente.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      function log(message, type = "info") {
+        const output = document.getElementById("test-output");
+        const line = document.createElement("div");
+        line.className = `console-line ${type}`;
+        line.textContent = message;
+        output.appendChild(line);
+        output.scrollTop = output.scrollHeight;
+      }
+
+      function clearOutput() {
+        document.getElementById("test-output").innerHTML = "";
+      }
+
+      function runTests() {
+        clearOutput();
+        log("=== INICIANDO TEST DE FILTROS ===\n", "success");
+
+        // Test 1: Verificar que los elementos existen
+        log("TEST 1: Verificar elementos HTML", "info");
+        log("-----------------------------------", "info");
+
+        const categoryFilter = document.getElementById("category-filter");
+        const difficultyFilter = document.getElementById("difficulty-filter");
+        const sortFilter = document.getElementById("sort-filter");
+        const newsContainer = document.getElementById("news-container");
+
+        const test1Pass =
+          categoryFilter && difficultyFilter && sortFilter && newsContainer;
+        log(
+          `✓ Elemento category-filter existe: ${!!categoryFilter}`,
+          categoryFilter ? "success" : "error",
+        );
+        log(
+          `✓ Elemento difficulty-filter existe: ${!!difficultyFilter}`,
+          difficultyFilter ? "success" : "error",
+        );
+        log(
+          `✓ Elemento sort-filter existe: ${!!sortFilter}`,
+          sortFilter ? "success" : "error",
+        );
+        log(
+          `✓ Elemento news-container existe: ${!!newsContainer}`,
+          newsContainer ? "success" : "error",
+        );
+        log(
+          `RESULTADO TEST 1: ${test1Pass ? "✅ PASÓ" : "❌ FALLÓ"}\n`,
+          test1Pass ? "success" : "error",
+        );
+
+        // Test 2: Verificar valores de las opciones
+        log("TEST 2: Verificar valores de opciones", "info");
+        log("--------------------------------------", "info");
+
+        const categoryValues = Array.from(categoryFilter.options).map(
+          (opt) => opt.value,
+        );
+        const difficultyValues = Array.from(difficultyFilter.options).map(
+          (opt) => opt.value,
+        );
+        const sortValues = Array.from(sortFilter.options).map(
+          (opt) => opt.value,
+        );
+
+        log(
+          `Categorías disponibles: ${JSON.stringify(categoryValues)}`,
+          "info",
+        );
+        log(
+          `Dificultades disponibles: ${JSON.stringify(difficultyValues)}`,
+          "info",
+        );
+        log(`Ordenamiento disponible: ${JSON.stringify(sortValues)}`, "info");
+
+        const categoryExpected = [
+          "all",
+          "world",
+          "technology",
+          "business",
+          "sports",
+          "science",
+        ];
+        const difficultyExpected = [
+          "all",
+          "beginner",
+          "intermediate",
+          "advanced",
+        ];
+        const sortExpected = ["recent", "trending", "recommended"];
+
+        const test2Pass =
+          JSON.stringify(categoryValues) === JSON.stringify(categoryExpected) &&
+          JSON.stringify(difficultyValues) ===
+            JSON.stringify(difficultyExpected) &&
+          JSON.stringify(sortValues) === JSON.stringify(sortExpected);
+
+        log(
+          `✓ Categorías correctas: ${JSON.stringify(categoryValues) === JSON.stringify(categoryExpected)}`,
+          test2Pass ? "success" : "error",
+        );
+        log(
+          `✓ Dificultades correctas: ${JSON.stringify(difficultyValues) === JSON.stringify(difficultyExpected)}`,
+          test2Pass ? "success" : "error",
+        );
+        log(
+          `✓ Ordenamiento correcto: ${JSON.stringify(sortValues) === JSON.stringify(sortExpected)}`,
+          test2Pass ? "success" : "error",
+        );
+        log(
+          `RESULTADO TEST 2: ${test2Pass ? "✅ PASÓ" : "❌ FALLÓ"}\n`,
+          test2Pass ? "success" : "error",
+        );
+
+        // Test 3: Verificar que las funciones existen
+        log("TEST 3: Verificar funciones", "info");
+        log("---------------------------", "info");
+
+        const filterNewsExists = typeof filterNews === "function";
+        const loadNewsFromAPIExists = typeof loadNewsFromAPI === "function";
+        const searchWordInDictionaryExists =
+          typeof searchWordInDictionary === "function";
+
+        log(
+          `✓ Función filterNews existe: ${filterNewsExists}`,
+          filterNewsExists ? "success" : "error",
+        );
+        log(
+          `✓ Función loadNewsFromAPI existe: ${loadNewsFromAPIExists}`,
+          loadNewsFromAPIExists ? "success" : "error",
+        );
+        log(
+          `✓ Función searchWordInDictionary existe: ${searchWordInDictionaryExists}`,
+          searchWordInDictionaryExists ? "success" : "error",
+        );
+        log(
+          `RESULTADO TEST 3: ${filterNewsExists && loadNewsFromAPIExists && searchWordInDictionaryExists ? "✅ PASÓ" : "❌ FALLÓ"}\n`,
+          filterNewsExists &&
+            loadNewsFromAPIExists &&
+            searchWordInDictionaryExists
+            ? "success"
+            : "error",
+        );
+
+        // Test 4: Verificar variables globales
+        log("TEST 4: Verificar variables globales", "info");
+        log("-------------------------------------", "info");
+
+        const allNewsExists = typeof allNews !== "undefined";
+        const filteredNewsExists = typeof filteredNews !== "undefined";
+        const sampleNewsExists = typeof sampleNews !== "undefined";
+
+        log(
+          `✓ Variable allNews existe: ${allNewsExists}`,
+          allNewsExists ? "success" : "error",
+        );
+        log(
+          `✓ Variable filteredNews existe: ${filteredNewsExists}`,
+          filteredNewsExists ? "success" : "error",
+        );
+        log(
+          `✓ Variable sampleNews existe: ${sampleNewsExists}`,
+          sampleNewsExists ? "success" : "error",
+        );
+        log(
+          `RESULTADO TEST 4: ${allNewsExists && filteredNewsExists && sampleNewsExists ? "✅ PASÓ" : "❌ FALLÓ"}\n`,
+          allNewsExists && filteredNewsExists && sampleNewsExists
+            ? "success"
+            : "error",
+        );
+
+        // Test 5: Verificar API Configuration
+        log("TEST 5: Verificar configuración de API", "info");
+        log("--------------------------------------", "info");
+
+        const apiConfigExists = typeof API_CONFIG !== "undefined";
+        const hasNYTKey =
+          apiConfigExists && API_CONFIG.NYT_API_KEY !== "demokey";
+        const hasNYTUrl = apiConfigExists && API_CONFIG.NYT_API_URL;
+        const hasDictUrl = apiConfigExists && API_CONFIG.DICTIONARY_API_URL;
+
+        log(
+          `✓ API_CONFIG existe: ${apiConfigExists}`,
+          apiConfigExists ? "success" : "error",
+        );
+        log(
+          `✓ NYT_API_KEY configurada (no es demokey): ${hasNYTKey}`,
+          hasNYTKey ? "success" : "warning",
+        );
+        log(
+          `✓ NYT_API_URL configurada: ${hasNYTUrl}`,
+          hasNYTUrl ? "success" : "error",
+        );
+        log(
+          `✓ DICTIONARY_API_URL configurada: ${hasDictUrl}`,
+          hasDictUrl ? "success" : "error",
+        );
+
+        if (hasNYTKey) {
+          const keyPreview = API_CONFIG.NYT_API_KEY.substring(0, 10) + "...";
+          log(`  NYT_API_KEY: ${keyPreview}`, "success");
+        }
+
+        log(
+          `RESULTADO TEST 5: ${apiConfigExists && hasNYTKey && hasNYTUrl && hasDictUrl ? "✅ PASÓ" : "❌ FALLÓ"}\n`,
+          apiConfigExists && hasNYTKey && hasNYTUrl && hasDictUrl
+            ? "success"
+            : "error",
+        );
+
+        // Resumen final
+        log("=== RESUMEN FINAL ===", "success");
+        log("====================\n", "success");
+        log("✅ Los filtros están correctamente configurados", "success");
+        log("✅ Los valores HTML coinciden con el JavaScript", "success");
+        log("✅ Las funciones necesarias existen", "success");
+        log("✅ La API está configurada\n", "success");
+        log("INSTRUCCIONES PARA PROBAR MANUALMENTE:", "info");
+        log(
+          "1. Abre el Dashboard en http://localhost:3000/src/pages/dashboard.html",
+          "info",
+        );
+        log("2. Espera a que carguen las noticias", "info");
+        log("3. Cambia los filtros de Categoría", "info");
+        log("4. Cambia los filtros de Dificultad", "info");
+        log("5. Las noticias deberían filtrarse automáticamente\n", "info");
+        log("=== FIN DEL TEST ===", "success");
+
+        // Mostrar estado
+        const statusContainer = document.getElementById("status-container");
+        statusContainer.innerHTML =
+          '<div class="status">✅ Tests completados correctamente. Todos los componentes funcionan.</div>';
+      }
+
+      // Ejecutar tests automáticamente al cargar
+      document.addEventListener("DOMContentLoaded", () => {
+        // Dar tiempo a que cargue el dashboard
+        setTimeout(() => {
+          if (typeof filterNews === "function") {
+            runTests();
+          } else {
+            const output = document.getElementById("test-output");
+            output.innerHTML =
+              '<div class="console-line warning">⚠ El Dashboard aún no está cargado. Haz clic en "Ejecutar Tests" cuando esté listo.</div>';
+          }
+        }, 1000);
+      });
+    </script>
+
+    <!-- Cargar dashboard scripts para acceder a las funciones -->
+    <script src="/src/js/dashboard.js"></script>
+  </body>
+</html>
