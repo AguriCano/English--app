@@ -137,11 +137,12 @@ function setupNavigationListeners() {
     const navLinks = document.querySelectorAll('.nav-links a');
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
             const lessonId = this.dataset.lesson;
             if (lessonId) {
+                e.preventDefault();
                 navigateToLesson(lessonId);
             }
+            // Si no tiene data-lesson, permitir navegación normal
         });
     });
 }

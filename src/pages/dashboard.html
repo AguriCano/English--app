@@ -22,6 +22,252 @@
 
     <!-- MAIN CONTENT -->
     <div class="main-container">
+      <!-- BIENVENIDA Y PERFIL RÁPIDO -->
+      <section class="welcome-section">
+        <div class="welcome-content">
+          <h2>Bienvenido de vuelta 👋</h2>
+          <p id="welcome-message">
+            Tu objetivo de hoy: Leer una noticia y aprender 5 palabras nuevas
+          </p>
+        </div>
+        <div class="user-stats-quick">
+          <div class="stat-box">
+            <span class="stat-icon">🔥</span>
+            <div class="stat-info">
+              <span class="stat-number" id="streak-count">7</span>
+              <span class="stat-label">Días seguidos</span>
+            </div>
+          </div>
+          <div class="stat-box">
+            <span class="stat-icon">📚</span>
+            <div class="stat-info">
+              <span class="stat-number" id="words-count">42</span>
+              <span class="stat-label">Palabras aprendidas</span>
+            </div>
+          </div>
+          <div class="stat-box">
+            <span class="stat-icon">📰</span>
+            <div class="stat-info">
+              <span class="stat-number" id="articles-count">8</span>
+              <span class="stat-label">Artículos leídos</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MICRO-RETOS DIARIOS -->
+      <section class="daily-challenges">
+        <h2>📋 Retos de Hoy</h2>
+        <div class="challenges-grid">
+          <div class="challenge-card">
+            <div class="challenge-icon">📖</div>
+            <h3>Leer una noticia</h3>
+            <p>Mantén tu racha diaria</p>
+            <div class="challenge-progress">
+              <div class="progress-bar-small">
+                <div class="progress-fill" style="width: 0%"></div>
+              </div>
+              <span class="progress-text">0/1</span>
+            </div>
+          </div>
+          <div class="challenge-card">
+            <div class="challenge-icon">📝</div>
+            <h3>Aprender 5 palabras</h3>
+            <p>Expande tu vocabulario</p>
+            <div class="challenge-progress">
+              <div class="progress-bar-small">
+                <div class="progress-fill" style="width: 20%"></div>
+              </div>
+              <span class="progress-text">1/5</span>
+            </div>
+          </div>
+          <div class="challenge-card">
+            <div class="challenge-icon">🔄</div>
+            <h3>Revisar vocabulario</h3>
+            <p>Repasa lo que aprendiste</p>
+            <div class="challenge-progress">
+              <div class="progress-bar-small">
+                <div class="progress-fill" style="width: 0%"></div>
+              </div>
+              <span class="progress-text">0/1</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NOTICIAS Y LECTURA -->
+      <section class="news-reader-section">
+        <div class="section-header">
+          <h2>📰 Leer Noticias en Inglés</h2>
+          <p class="section-subtitle">
+            Aprende inglés leyendo noticias reales y actuales
+          </p>
+        </div>
+
+        <!-- FILTROS -->
+        <div class="filters-container">
+          <div class="filter-group">
+            <label>Categoría:</label>
+            <select id="category-filter" class="filter-select">
+              <option value="all">Todas</option>
+              <option value="world">Mundo</option>
+              <option value="tech">Tecnología</option>
+              <option value="business">Negocios</option>
+              <option value="sports">Deportes</option>
+              <option value="science">Ciencia</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Dificultad:</label>
+            <select id="difficulty-filter" class="filter-select">
+              <option value="all">Todas</option>
+              <option value="beginner">Principiante</option>
+              <option value="intermediate">Intermedio</option>
+              <option value="advanced">Avanzado</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Ordenar por:</label>
+            <select id="sort-filter" class="filter-select">
+              <option value="recent">Más recientes</option>
+              <option value="trending">Tendencias</option>
+              <option value="recommended">Recomendadas</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- GRID DE NOTICIAS -->
+        <div class="news-grid" id="news-container">
+          <!-- Se llena con JavaScript desde NYT API -->
+          <div class="news-card">
+            <div class="news-meta">
+              <span class="news-category">Tecnología</span>
+              <span class="news-difficulty">Intermedio</span>
+            </div>
+            <h3>La IA revoluciona el mundo de la programación</h3>
+            <p class="news-excerpt">
+              Desarrolladores de todo el mundo están adaptando sus flujos de
+              trabajo para incorporar herramientas de IA...
+            </p>
+            <div class="news-footer">
+              <span class="reading-time">⏱ 5 min</span>
+              <button class="btn btn-primary-small" onclick="openNewsReader()">
+                Leer
+              </button>
+            </div>
+          </div>
+
+          <div class="news-card">
+            <div class="news-meta">
+              <span class="news-category">Negocios</span>
+              <span class="news-difficulty">Avanzado</span>
+            </div>
+            <h3>Nuevo tratado comercial entre Estados Unidos y Europa</h3>
+            <p class="news-excerpt">
+              Los negociadores de ambos lados llegan a un acuerdo histórico que
+              afectará billones en comercio...
+            </p>
+            <div class="news-footer">
+              <span class="reading-time">⏱ 8 min</span>
+              <button class="btn btn-primary-small" onclick="openNewsReader()">
+                Leer
+              </button>
+            </div>
+          </div>
+
+          <div class="news-card">
+            <div class="news-meta">
+              <span class="news-category">Ciencia</span>
+              <span class="news-difficulty">Intermedio</span>
+            </div>
+            <h3>Descubrimiento revolucionario en medicina regenerativa</h3>
+            <p class="news-excerpt">
+              Científicos logran regenerar tejido cardíaco usando células madre
+              en un avance que promete transformar...
+            </p>
+            <div class="news-footer">
+              <span class="reading-time">⏱ 6 min</span>
+              <button class="btn btn-primary-small" onclick="openNewsReader()">
+                Leer
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MY VOCABULARY -->
+      <section class="vocabulary-section">
+        <div class="section-header">
+          <h2>📚 Mi Vocabulario</h2>
+          <p class="section-subtitle">
+            Palabras que has guardado para estudiar
+          </p>
+        </div>
+
+        <div class="vocabulary-controls">
+          <input
+            type="text"
+            id="vocab-search"
+            class="search-input"
+            placeholder="Buscar palabras..."
+          />
+          <select id="vocab-sort" class="filter-select">
+            <option value="recent">Más recientes</option>
+            <option value="alphabetical">Alfabético</option>
+            <option value="difficulty">Por dificultad</option>
+          </select>
+        </div>
+
+        <div class="vocabulary-list" id="vocabulary-container">
+          <div class="vocabulary-item">
+            <div class="vocab-word">
+              <h4>Resilience</h4>
+              <span class="vocab-pronunciation">/rɪˈzɪl.i.əns/</span>
+            </div>
+            <div class="vocab-definition">
+              <p>
+                <strong>Definición:</strong> La capacidad de recuperarse
+                rápidamente
+              </p>
+              <p>
+                <strong>Ejemplo:</strong> "The team showed great resilience
+                after their defeat."
+              </p>
+              <span class="vocab-level">Intermedio</span>
+            </div>
+            <div class="vocab-actions">
+              <button class="btn-icon" title="Escuchar">🔊</button>
+              <button class="btn-icon" title="Marcar como aprendida">✓</button>
+              <button class="btn-icon" title="Eliminar">🗑</button>
+            </div>
+          </div>
+
+          <div class="vocabulary-item">
+            <div class="vocab-word">
+              <h4>Serendipity</h4>
+              <span class="vocab-pronunciation">/ˌser.ənˈdɪp.ə.ti/</span>
+            </div>
+            <div class="vocab-definition">
+              <p>
+                <strong>Definición:</strong> Encontrar algo bueno sin buscarlo
+              </p>
+              <p>
+                <strong>Ejemplo:</strong> "By serendipity, I found the perfect
+                job."
+              </p>
+              <span class="vocab-level">Avanzado</span>
+            </div>
+            <div class="vocab-actions">
+              <button class="btn-icon" title="Escuchar">🔊</button>
+              <button class="btn-icon" title="Marcar como aprendida">✓</button>
+              <button class="btn-icon" title="Eliminar">🗑</button>
+            </div>
+          </div>
+        </div>
+
+        <a href="#" class="link-more">Ver todas mis palabras →</a>
+      </section>
+
       <!-- NIVELES DE APRENDIZAJE -->
       <section class="levels-section">
         <h2>Elige tu nivel</h2>
@@ -85,7 +331,7 @@
 
       <!-- PROGRESO -->
       <section class="progress-section">
-        <h2>Tu Progreso</h2>
+        <h2>Tu Progreso General</h2>
         <div class="progress-card">
           <h3>Racha de aprendizaje</h3>
           <div class="progress-stat">
@@ -102,5 +348,6 @@
 
     <script src="../js/auth.js"></script>
     <script src="../js/app.js"></script>
+    <script src="../js/dashboard.js"></script>
   </body>
 </html>
