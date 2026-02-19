@@ -1,0 +1,39 @@
+{
+  "words": [
+    {
+      "id": 1,
+      "word": "Cat",
+      "phonetic": "/kæt/",
+      "icon": "🐱",
+      "color": "#FFA500"
+    },
+    {
+      "id": 2,
+      "word": "Dog",
+      "phonetic": "/dɔːɡ/",
+      "icon": "🐶",
+      "color": "#8B4513"
+    },
+    {
+      "id": 3,
+      "word": "Bird",
+      "phonetic": "/bɜːrd/",
+      "icon": "🐦",
+      "color": "#FFD700"
+    },
+    {
+      "id": 4,
+      "word": "Fish",
+      "phonetic": "/fɪʃ/",
+      "icon": "🐠",
+      "color": "#FF6347"
+    },
+    {
+      "id": 5,
+      "word": "Lion",
+      "phonetic": "/ˈlaɪən/",
+      "icon": "🦁",
+      "color": "#DAA520"
+    }
+  ]
+}

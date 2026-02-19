@@ -1,0 +1,39 @@
+{
+  "words": [
+    {
+      "id": 1,
+      "word": "One",
+      "phonetic": "/wʌn/",
+      "icon": "1️⃣",
+      "color": "#2E86AB"
+    },
+    {
+      "id": 2,
+      "word": "Two",
+      "phonetic": "/tuː/",
+      "icon": "2️⃣",
+      "color": "#A23B72"
+    },
+    {
+      "id": 3,
+      "word": "Three",
+      "phonetic": "/θriː/",
+      "icon": "3️⃣",
+      "color": "#F18F01"
+    },
+    {
+      "id": 4,
+      "word": "Four",
+      "phonetic": "/fɔːr/",
+      "icon": "4️⃣",
+      "color": "#C73E1D"
+    },
+    {
+      "id": 5,
+      "word": "Five",
+      "phonetic": "/faɪv/",
+      "icon": "5️⃣",
+      "color": "#6A994E"
+    }
+  ]
+}

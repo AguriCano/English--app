@@ -1,0 +1,39 @@
+{
+  "words": [
+    {
+      "id": 1,
+      "word": "Car",
+      "phonetic": "/kɑːr/",
+      "icon": "🚗",
+      "color": "#FF0000"
+    },
+    {
+      "id": 2,
+      "word": "Bus",
+      "phonetic": "/bʌs/",
+      "icon": "🚌",
+      "color": "#FFD700"
+    },
+    {
+      "id": 3,
+      "word": "Train",
+      "phonetic": "/treɪn/",
+      "icon": "🚆",
+      "color": "#696969"
+    },
+    {
+      "id": 4,
+      "word": "Plane",
+      "phonetic": "/pleɪn/",
+      "icon": "✈️",
+      "color": "#87CEEB"
+    },
+    {
+      "id": 5,
+      "word": "Bike",
+      "phonetic": "/baɪk/",
+      "icon": "🚲",
+      "color": "#FF4500"
+    }
+  ]
+}

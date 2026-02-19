@@ -1,0 +1,39 @@
+{
+  "words": [
+    {
+      "id": 1,
+      "word": "Sun",
+      "phonetic": "/sʌn/",
+      "icon": "☀️",
+      "color": "#FFD700"
+    },
+    {
+      "id": 2,
+      "word": "Rain",
+      "phonetic": "/reɪn/",
+      "icon": "🌧️",
+      "color": "#4169E1"
+    },
+    {
+      "id": 3,
+      "word": "Cloud",
+      "phonetic": "/klaʊd/",
+      "icon": "☁️",
+      "color": "#DCDCDC"
+    },
+    {
+      "id": 4,
+      "word": "Snow",
+      "phonetic": "/snoʊ/",
+      "icon": "❄️",
+      "color": "#F0F8FF"
+    },
+    {
+      "id": 5,
+      "word": "Wind",
+      "phonetic": "/wɪnd/",
+      "icon": "💨",
+      "color": "#B0C4DE"
+    }
+  ]
+}

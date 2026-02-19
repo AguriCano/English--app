@@ -1,0 +1,39 @@
+{
+  "words": [
+    {
+      "id": 1,
+      "word": "Happy",
+      "phonetic": "/ˈhæpi/",
+      "icon": "😊",
+      "color": "#FFD700"
+    },
+    {
+      "id": 2,
+      "word": "Sad",
+      "phonetic": "/sæd/",
+      "icon": "😢",
+      "color": "#4169E1"
+    },
+    {
+      "id": 3,
+      "word": "Angry",
+      "phonetic": "/ˈæŋɡri/",
+      "icon": "😠",
+      "color": "#FF4500"
+    },
+    {
+      "id": 4,
+      "word": "Fear",
+      "phonetic": "/fɪr/",
+      "icon": "😨",
+      "color": "#8B008B"
+    },
+    {
+      "id": 5,
+      "word": "Pride",
+      "phonetic": "/praɪd/",
+      "icon": "😌",
+      "color": "#FFB6C1"
+    }
+  ]
+}

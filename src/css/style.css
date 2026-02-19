@@ -872,4 +872,381 @@ body {
     .vocab-actions {
         justify-content: flex-start;
     }
+
+    /* Speaking Practice Section */
+    .speaking-cards-container {
+        grid-template-columns: 1fr;
+    }
+
+    .speaking-card {
+        width: 100%;
+    }
+}
+
+/* ===========================
+   PRACTICE ENGLISH SPEAKING
+   =========================== */
+
+.speaking-practice-section {
+    margin-bottom: 60px;
+}
+
+.speaking-practice-section .section-header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.speaking-practice-section .section-header h2 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+
+/* Speaking Cards Container */
+.speaking-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+/* Speaking Card */
+.speaking-card {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.speaking-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.speaking-card.orange {
+    border-top: 4px solid #ffa500;
+}
+
+.speaking-card.pink {
+    border-top: 4px solid #ff6b9d;
+}
+
+.speaking-card.green {
+    border-top: 4px solid #26d0ce;
+}
+
+.speaking-card.blue {
+    border-top: 4px solid #6bceff;
+}
+
+.speaking-card.purple {
+    border-top: 4px solid #d4a5ff;
+}
+
+/* Card Icon */
+.speaking-card-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.speaking-card.orange .speaking-card-icon {
+    background: #ffe4cc;
+}
+
+.speaking-card.pink .speaking-card-icon {
+    background: #ffd4e5;
+}
+
+.speaking-card.green .speaking-card-icon {
+    background: #c8f7f0;
+}
+
+.speaking-card.blue .speaking-card-icon {
+    background: #d4f0ff;
+}
+
+.speaking-card.purple .speaking-card-icon {
+    background: #e8d4ff;
+}
+
+/* Word and Phonetic */
+.speaking-card-word {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.speaking-card-phonetic {
+    font-size: 1em;
+    color: #999;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+/* Controls Group */
+.speaking-card-controls {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Play Button */
+.btn-play {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.btn-play:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-play:active {
+    transform: scale(0.95);
+}
+
+.btn-play.playing {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Microphone Button */
+.btn-microphone {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.btn-microphone:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+.btn-microphone:active {
+    transform: scale(0.95);
+}
+
+.btn-microphone.recording {
+    background: #ff4444;
+    animation: pulse 1s infinite;
+}
+
+/* Recording Indicator */
+.recording-indicator {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid #ff6b6b;
+    animation: recordingBlink 1s infinite;
+    display: none;
+}
+
+.btn-microphone.recording .recording-indicator {
+    display: block;
+}
+
+@keyframes recordingBlink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Feedback Display */
+.speaking-card-feedback {
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 8px;
+    font-size: 0.95em;
+    display: none;
+    animation: slideDown 0.3s ease;
+}
+
+.speaking-card-feedback.show {
+    display: block;
+}
+
+.speaking-card-feedback.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.speaking-card-feedback.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.speaking-card-feedback.info {
+    background: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Score Display */
+.speaking-card-score {
+    font-weight: 700;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+
+.speaking-card-score::before {
+    content: "🎯 Score: ";
+}
+
+.speaking-card-recognized {
+    font-size: 0.9em;
+    margin-bottom: 8px;
+    color: #666;
+}
+
+/* Loader/Spinner */
+.speaking-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    gap: 20px;
+}
+
+.spinner {
+    border: 4px solid #f0f0f0;
+    border-top: 4px solid #667eea;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.speaking-loading p {
+    color: #666;
+    font-size: 1.1em;
+}
+
+/* Error Message */
+.speaking-error {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #f5c6cb;
+    margin-bottom: 20px;
+    display: none;
+}
+
+.speaking-error.show {
+    display: block;
+}
+
+.speaking-error strong {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Actions */
+.speaking-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.speaking-actions .btn-primary {
+    padding: 14px 40px;
+    font-size: 1.05em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .speaking-cards-container {
+        grid-template-columns: 1fr;
+    }
+
+    .speaking-practice-section .section-header h2 {
+        font-size: 1.8em;
+    }
+
+    .speaking-card {
+        padding: 20px;
+    }
+
+    .speaking-card-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 35px;
+    }
+
+    .speaking-card-word {
+        font-size: 1.5em;
+    }
 }

@@ -1,0 +1,39 @@
+{
+  "words": [
+    {
+      "id": 1,
+      "word": "Door",
+      "phonetic": "/dɔːr/",
+      "icon": "🚪",
+      "color": "#8B4513"
+    },
+    {
+      "id": 2,
+      "word": "Window",
+      "phonetic": "/ˈwɪndoʊ/",
+      "icon": "🪟",
+      "color": "#87CEEB"
+    },
+    {
+      "id": 3,
+      "word": "Bed",
+      "phonetic": "/bed/",
+      "icon": "🛏️",
+      "color": "#FFB6C1"
+    },
+    {
+      "id": 4,
+      "word": "Table",
+      "phonetic": "/ˈteɪbəl/",
+      "icon": "🪑",
+      "color": "#DAA520"
+    },
+    {
+      "id": 5,
+      "word": "Chair",
+      "phonetic": "/tʃɛr/",
+      "icon": "💺",
+      "color": "#A0522D"
+    }
+  ]
+}

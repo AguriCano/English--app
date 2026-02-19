@@ -1,0 +1,39 @@
+{
+  "words": [
+    {
+      "id": 1,
+      "word": "Somewhere",
+      "phonetic": "/ˈsʌm.weər/",
+      "icon": "map",
+      "color": "orange"
+    },
+    {
+      "id": 2,
+      "word": "Nobody",
+      "phonetic": "/ˈnoʊ.bə.di/",
+      "icon": "person",
+      "color": "pink"
+    },
+    {
+      "id": 3,
+      "word": "Everybody",
+      "phonetic": "/ˈev.ri.bɑ.di/",
+      "icon": "people",
+      "color": "green"
+    },
+    {
+      "id": 4,
+      "word": "Someone",
+      "phonetic": "/ˈsʌm.wʌn/",
+      "icon": "user",
+      "color": "blue"
+    },
+    {
+      "id": 5,
+      "word": "Anything",
+      "phonetic": "/ˈen.i.θɪŋ/",
+      "icon": "cube",
+      "color": "purple"
+    }
+  ]
+}

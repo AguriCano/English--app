@@ -1,0 +1,39 @@
+{
+  "words": [
+    {
+      "id": 1,
+      "word": "Shirt",
+      "phonetic": "/ʃɜːrt/",
+      "icon": "👕",
+      "color": "#FF6B6B"
+    },
+    {
+      "id": 2,
+      "word": "Pants",
+      "phonetic": "/pænts/",
+      "icon": "👖",
+      "color": "#4169E1"
+    },
+    {
+      "id": 3,
+      "word": "Hat",
+      "phonetic": "/hæt/",
+      "icon": "🎩",
+      "color": "#8B4513"
+    },
+    {
+      "id": 4,
+      "word": "Shoes",
+      "phonetic": "/ʃuːz/",
+      "icon": "👞",
+      "color": "#2F4F4F"
+    },
+    {
+      "id": 5,
+      "word": "Jacket",
+      "phonetic": "/ˈdʒækɪt/",
+      "icon": "🧥",
+      "color": "#696969"
+    }
+  ]
+}

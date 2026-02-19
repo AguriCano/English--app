@@ -1,0 +1,39 @@
+{
+  "words": [
+    {
+      "id": 6,
+      "word": "Beautiful",
+      "phonetic": "/ˈbjuː.tə.fəl/",
+      "icon": "map",
+      "color": "orange"
+    },
+    {
+      "id": 7,
+      "word": "Wonderful",
+      "phonetic": "/ˈwʌn.der.fəl/",
+      "icon": "person",
+      "color": "pink"
+    },
+    {
+      "id": 8,
+      "word": "Interesting",
+      "phonetic": "/ˈɪn.tər.ə.stɪŋ/",
+      "icon": "people",
+      "color": "green"
+    },
+    {
+      "id": 9,
+      "word": "Dangerous",
+      "phonetic": "/ˈdeɪn.dʒər.əs/",
+      "icon": "user",
+      "color": "blue"
+    },
+    {
+      "id": 10,
+      "word": "Different",
+      "phonetic": "/ˈdɪf.ər.ənt/",
+      "icon": "cube",
+      "color": "purple"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "words": [
+    {
+      "id": 1,
+      "word": "Morning",
+      "phonetic": "/ˈmɔːrnɪŋ/",
+      "icon": "🌅",
+      "color": "#FF6B6B"
+    },
+    {
+      "id": 2,
+      "word": "Afternoon",
+      "phonetic": "/ˈæftərnuːn/",
+      "icon": "🌞",
+      "color": "#FFD700"
+    },
+    {
+      "id": 3,
+      "word": "Evening",
+      "phonetic": "/ˈiːvnɪŋ/",
+      "icon": "🌆",
+      "color": "#FF8C00"
+    },
+    {
+      "id": 4,
+      "word": "Night",
+      "phonetic": "/naɪt/",
+      "icon": "🌙",
+      "color": "#191970"
+    },
+    {
+      "id": 5,
+      "word": "Hour",
+      "phonetic": "/ˈaʊər/",
+      "icon": "🕐",
+      "color": "#696969"
+    }
+  ]
+}

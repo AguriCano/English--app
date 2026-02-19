@@ -1,0 +1,39 @@
+{
+  "words": [
+    {
+      "id": 1,
+      "word": "Red",
+      "phonetic": "/red/",
+      "icon": "🔴",
+      "color": "#E63946"
+    },
+    {
+      "id": 2,
+      "word": "Blue",
+      "phonetic": "/bluː/",
+      "icon": "🔵",
+      "color": "#457B9D"
+    },
+    {
+      "id": 3,
+      "word": "Green",
+      "phonetic": "/ɡriːn/",
+      "icon": "🟢",
+      "color": "#2A9D8F"
+    },
+    {
+      "id": 4,
+      "word": "Yellow",
+      "phonetic": "/ˈjeloʊ/",
+      "icon": "🟡",
+      "color": "#F4A460"
+    },
+    {
+      "id": 5,
+      "word": "Purple",
+      "phonetic": "/ˈpɜːrpl/",
+      "icon": "🟣",
+      "color": "#9D4EDD"
+    }
+  ]
+}

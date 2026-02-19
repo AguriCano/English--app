@@ -1,0 +1,39 @@
+{
+  "words": [
+    {
+      "id": 1,
+      "word": "Run",
+      "phonetic": "/rʌn/",
+      "icon": "🏃",
+      "color": "#FF6B6B"
+    },
+    {
+      "id": 2,
+      "word": "Jump",
+      "phonetic": "/dʒʌmp/",
+      "icon": "🦘",
+      "color": "#FF8E8E"
+    },
+    {
+      "id": 3,
+      "word": "Sleep",
+      "phonetic": "/sliːp/",
+      "icon": "😴",
+      "color": "#C44569"
+    },
+    {
+      "id": 4,
+      "word": "Walk",
+      "phonetic": "/wɔːk/",
+      "icon": "🚶",
+      "color": "#FF6B9D"
+    },
+    {
+      "id": 5,
+      "word": "Eat",
+      "phonetic": "/iːt/",
+      "icon": "🍽️",
+      "color": "#E63946"
+    }
+  ]
+}

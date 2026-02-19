@@ -1,0 +1,39 @@
+{
+  "words": [
+    {
+      "id": 16,
+      "word": "Excellent",
+      "phonetic": "/ˈek.səl.ənt/",
+      "icon": "map",
+      "color": "orange"
+    },
+    {
+      "id": 17,
+      "word": "Terrible",
+      "phonetic": "/ˈter.ə.bəl/",
+      "icon": "person",
+      "color": "pink"
+    },
+    {
+      "id": 18,
+      "word": "Amazing",
+      "phonetic": "/əˈmeɪ.zɪŋ/",
+      "icon": "people",
+      "color": "green"
+    },
+    {
+      "id": 19,
+      "word": "Boring",
+      "phonetic": "/ˈbɔr.ɪŋ/",
+      "icon": "user",
+      "color": "blue"
+    },
+    {
+      "id": 20,
+      "word": "Exciting",
+      "phonetic": "/ɪkˈsaɪ.tɪŋ/",
+      "icon": "cube",
+      "color": "purple"
+    }
+  ]
+}

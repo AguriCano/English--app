@@ -1,0 +1,39 @@
+{
+  "words": [
+    {
+      "id": 1,
+      "word": "Hello",
+      "phonetic": "/həˈloʊ/",
+      "icon": "👋",
+      "color": "#FF6B6B"
+    },
+    {
+      "id": 2,
+      "word": "Goodbye",
+      "phonetic": "/ɡʊdˈbaɪ/",
+      "icon": "👋",
+      "color": "#4169E1"
+    },
+    {
+      "id": 3,
+      "word": "Thank",
+      "phonetic": "/θæŋk/",
+      "icon": "🙏",
+      "color": "#FFD700"
+    },
+    {
+      "id": 4,
+      "word": "Sorry",
+      "phonetic": "/ˈsɑːri/",
+      "icon": "😔",
+      "color": "#FF8C00"
+    },
+    {
+      "id": 5,
+      "word": "Please",
+      "phonetic": "/pliːz/",
+      "icon": "🤝",
+      "color": "#32CD32"
+    }
+  ]
+}

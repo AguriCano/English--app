@@ -1,0 +1,39 @@
+{
+  "words": [
+    {
+      "id": 1,
+      "word": "Mother",
+      "phonetic": "/ˈmʌðər/",
+      "icon": "👩",
+      "color": "#FF69B4"
+    },
+    {
+      "id": 2,
+      "word": "Father",
+      "phonetic": "/ˈfɑːðər/",
+      "icon": "👨",
+      "color": "#4169E1"
+    },
+    {
+      "id": 3,
+      "word": "Sister",
+      "phonetic": "/ˈsɪstər/",
+      "icon": "👧",
+      "color": "#FFB6C1"
+    },
+    {
+      "id": 4,
+      "word": "Brother",
+      "phonetic": "/ˈbrʌðər/",
+      "icon": "👦",
+      "color": "#87CEEB"
+    },
+    {
+      "id": 5,
+      "word": "Baby",
+      "phonetic": "/ˈbeɪbi/",
+      "icon": "👶",
+      "color": "#FFA07A"
+    }
+  ]
+}

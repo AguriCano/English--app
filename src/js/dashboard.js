@@ -418,11 +418,10 @@ function displayFilteredVocabulary(vocab) {
 
 // Abrir lector de noticias
 function openNewsReader(newsId) {
-    const news = sampleNews.find(n => n.id == newsId);
-    if (news) {
-        console.log('Abriendo noticia:', news.title);
-        // Aquí se podría abrir un modal o redirigir a una página de lectura
-        alert(`Abriendo: ${news.title}\n\nCaracterística de lectura completa en desarrollo...`);
+    const news = allNews.find(n => n.id == newsId) || sampleNews.find(n => n.id == newsId);
+    if (news || newsId) {
+        // Redirigir a la página de lectura de artículo
+        window.location.href = `news-article.html?id=${newsId}`;
     }
 }
 

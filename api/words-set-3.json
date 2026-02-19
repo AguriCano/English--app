@@ -1,0 +1,39 @@
+{
+  "words": [
+    {
+      "id": 11,
+      "word": "Tomorrow",
+      "phonetic": "/təˈmɑr.oʊ/",
+      "icon": "map",
+      "color": "orange"
+    },
+    {
+      "id": 12,
+      "word": "Yesterday",
+      "phonetic": "/ˈjes.tər.deɪ/",
+      "icon": "person",
+      "color": "pink"
+    },
+    {
+      "id": 13,
+      "word": "Always",
+      "phonetic": "/ˈɔl.weɪz/",
+      "icon": "people",
+      "color": "green"
+    },
+    {
+      "id": 14,
+      "word": "Never",
+      "phonetic": "/ˈnev.ər/",
+      "icon": "user",
+      "color": "blue"
+    },
+    {
+      "id": 15,
+      "word": "Sometimes",
+      "phonetic": "/ˈsʌm.taɪmz/",
+      "icon": "cube",
+      "color": "purple"
+    }
+  ]
+}

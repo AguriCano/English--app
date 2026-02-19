@@ -1,0 +1,39 @@
+{
+  "words": [
+    {
+      "id": 1,
+      "word": "Apple",
+      "phonetic": "/ˈæpəl/",
+      "icon": "🍎",
+      "color": "#DC143C"
+    },
+    {
+      "id": 2,
+      "word": "Bread",
+      "phonetic": "/bred/",
+      "icon": "🍞",
+      "color": "#D2691E"
+    },
+    {
+      "id": 3,
+      "word": "Cheese",
+      "phonetic": "/tʃiːz/",
+      "icon": "🧀",
+      "color": "#FFD700"
+    },
+    {
+      "id": 4,
+      "word": "Milk",
+      "phonetic": "/mɪlk/",
+      "icon": "🥛",
+      "color": "#F5F5F5"
+    },
+    {
+      "id": 5,
+      "word": "Water",
+      "phonetic": "/ˈwɔːtər/",
+      "icon": "💧",
+      "color": "#00BFFF"
+    }
+  ]
+}

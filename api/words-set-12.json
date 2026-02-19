@@ -1,0 +1,39 @@
+{
+  "words": [
+    {
+      "id": 1,
+      "word": "Head",
+      "phonetic": "/hed/",
+      "icon": "🗣️",
+      "color": "#FF6B6B"
+    },
+    {
+      "id": 2,
+      "word": "Hand",
+      "phonetic": "/hænd/",
+      "icon": "✋",
+      "color": "#FDBCB4"
+    },
+    {
+      "id": 3,
+      "word": "Foot",
+      "phonetic": "/fʊt/",
+      "icon": "🦶",
+      "color": "#FFB4A8"
+    },
+    {
+      "id": 4,
+      "word": "Eye",
+      "phonetic": "/aɪ/",
+      "icon": "👁️",
+      "color": "#4A90E2"
+    },
+    {
+      "id": 5,
+      "word": "Mouth",
+      "phonetic": "/maʊθ/",
+      "icon": "👄",
+      "color": "#FF69B4"
+    }
+  ]
+}

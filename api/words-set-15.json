@@ -1,0 +1,39 @@
+{
+  "words": [
+    {
+      "id": 1,
+      "word": "Book",
+      "phonetic": "/bʊk/",
+      "icon": "📖",
+      "color": "#8B0000"
+    },
+    {
+      "id": 2,
+      "word": "Pen",
+      "phonetic": "/pen/",
+      "icon": "🖊️",
+      "color": "#4169E1"
+    },
+    {
+      "id": 3,
+      "word": "Desk",
+      "phonetic": "/desk/",
+      "icon": "🖥️",
+      "color": "#696969"
+    },
+    {
+      "id": 4,
+      "word": "Teacher",
+      "phonetic": "/ˈtiːtʃər/",
+      "icon": "👨‍🏫",
+      "color": "#FFD700"
+    },
+    {
+      "id": 5,
+      "word": "Student",
+      "phonetic": "/ˈstjuːdənt/",
+      "icon": "👨‍🎓",
+      "color": "#FF8C00"
+    }
+  ]
+}

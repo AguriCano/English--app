@@ -1,0 +1,39 @@
+{
+  "words": [
+    {
+      "id": 21,
+      "word": "Happy",
+      "phonetic": "/ˈhæp.i/",
+      "icon": "map",
+      "color": "orange"
+    },
+    {
+      "id": 22,
+      "word": "Sad",
+      "phonetic": "/sæd/",
+      "icon": "person",
+      "color": "pink"
+    },
+    {
+      "id": 23,
+      "word": "Angry",
+      "phonetic": "/ˈæŋ.ɡri/",
+      "icon": "people",
+      "color": "green"
+    },
+    {
+      "id": 24,
+      "word": "Confused",
+      "phonetic": "/kənˈfjuzd/",
+      "icon": "user",
+      "color": "blue"
+    },
+    {
+      "id": 25,
+      "word": "Surprised",
+      "phonetic": "/sərˈpraɪzd/",
+      "icon": "cube",
+      "color": "purple"
+    }
+  ]
+}

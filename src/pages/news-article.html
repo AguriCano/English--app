@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leer Noticia - English App</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      .article-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+      }
+
+      .article-header h1 {
+        margin: 20px 0;
+        font-size: 2.5em;
+        line-height: 1.3;
+      }
+
+      .article-meta {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        font-size: 0.95em;
+        margin-top: 20px;
+        opacity: 0.95;
+      }
+
+      .article-meta span {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .article-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+
+      .article-content {
+        font-size: 1.1em;
+        line-height: 1.8;
+        color: #333;
+        text-align: justify;
+      }
+
+      .article-content p {
+        margin-bottom: 20px;
+      }
+
+      .article-highlight {
+        background: #fff3cd;
+        padding: 15px;
+        border-left: 4px solid #ffc107;
+        margin: 20px 0;
+        border-radius: 4px;
+      }
+
+      .article-badges {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 0.85em;
+        font-weight: 500;
+      }
+
+      .badge-category {
+        background: #667eea;
+        color: white;
+      }
+
+      .badge-difficulty {
+        background: #764ba2;
+        color: white;
+      }
+
+      .badge-difficulty.beginner {
+        background: #10b981;
+      }
+
+      .badge-difficulty.intermediate {
+        background: #f59e0b;
+      }
+
+      .badge-difficulty.advanced {
+        background: #ef4444;
+      }
+
+      .article-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background: #f5f5f5;
+        border-radius: 8px;
+        margin-top: 40px;
+      }
+
+      .article-nav button {
+        padding: 10px 20px;
+        background: #667eea;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+        transition: background 0.3s;
+      }
+
+      .article-nav button:hover {
+        background: #764ba2;
+      }
+
+      .article-nav a {
+        color: #667eea;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .article-nav a:hover {
+        color: #764ba2;
+      }
+
+      .loading {
+        text-align: center;
+        padding: 60px 20px;
+        font-size: 1.2em;
+        color: #666;
+      }
+
+      .error {
+        background: #fee;
+        color: #c00;
+        padding: 20px;
+        border-radius: 8px;
+        margin: 20px;
+        text-align: center;
+      }
+
+      .word-popup {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: white;
+        border: 2px solid #667eea;
+        border-radius: 8px;
+        padding: 15px;
+        max-width: 300px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        display: none;
+      }
+
+      .word-popup h4 {
+        margin: 0 0 8px 0;
+        color: #667eea;
+      }
+
+      .word-popup p {
+        margin: 5px 0;
+        font-size: 0.9em;
+      }
+
+      .word-popup .close {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.2em;
+      }
+
+      .vocab-button {
+        background: #10b981;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.85em;
+        margin-top: 8px;
+      }
+
+      .vocab-button:hover {
+        background: #059669;
+      }
+
+      @media (max-width: 768px) {
+        .article-header h1 {
+          font-size: 1.8em;
+        }
+
+        .article-meta {
+          gap: 15px;
+          font-size: 0.85em;
+        }
+
+        .article-container {
+          padding: 20px 15px;
+        }
+
+        .article-content {
+          font-size: 1em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-content">
+        <h1>Learn English</h1>
+        <div class="header-user">
+          <span id="userEmail" class="user-email"></span>
+          <button class="logout-btn" onclick="handleLogout()">Sign Out</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ARTICLE CONTENT -->
+    <div id="article-loading" class="loading">⏳ Loading article...</div>
+
+    <div id="article-main" style="display: none">
+      <!-- Article Header -->
+      <div class="article-header">
+        <div id="article-badges" class="article-badges"></div>
+        <h1 id="article-title"></h1>
+        <div class="article-meta">
+          <span>📅 <span id="article-date"></span></span>
+          <span>⏱ <span id="article-time"></span></span>
+          <span>📖 <span id="article-words"></span></span>
+        </div>
+      </div>
+
+      <!-- Article Container -->
+      <div class="article-container">
+        <div class="article-content" id="article-body">
+          <!-- Content will be inserted here -->
+        </div>
+
+        <!-- Navigation -->
+        <div class="article-nav">
+          <button onclick="window.history.back()">← Back</button>
+          <a href="dashboard.html">Go to Dashboard</a>
+        </div>
+
+        <!-- Add to vocabulary section -->
+        <div class="article-highlight">
+          <h3>💡 Learn words from this article</h3>
+          <p id="vocab-suggestion">
+            Double-click any word to add it to your vocabulary.
+          </p>
+          <div id="suggested-words" style="margin-top: 15px"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Error State -->
+    <div id="article-error" class="error" style="display: none">
+      ❌ Could not load the article.
+      <a href="dashboard.html">Back to dashboard</a>
+    </div>
+
+    <!-- Word Popup -->
+    <div class="word-popup" id="wordPopup">
+      <button class="close" onclick="closeWordPopup()">✕</button>
+      <h4 id="popup-word"></h4>
+      <p id="popup-definition"></p>
+      <button class="vocab-button" onclick="addToVocabulary()">
+        Agregar al vocabulario
+      </button>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/dashboard.js"></script>
+    <script>
+      // Get article ID from URL
+      const params = new URLSearchParams(window.location.search);
+      const articleId = params.get("id");
+
+      // Article content (extended versions)
+      const articleContents = {
+        1: {
+          title: "AI is Revolutionizing the World of Programming",
+          category: "Technology",
+          difficulty: "intermediate",
+          date: "February 19, 2026",
+          readTime: 8,
+          content: `
+                    <p>Artificial intelligence is fundamentally transforming how developers write, test, and maintain code. Generative AI tools are now capable of completing complex functions, identifying potential security vulnerabilities, and suggesting performance optimizations with increasing precision and accuracy.</p>
+
+                    <p>Leading companies such as OpenAI, Google, and GitHub have invested billions of dollars in developing AI systems that can understand code context and generate intelligent solutions. GitHub Copilot, for example, has proven to be a revolutionary tool that has significantly improved development speed in teams around the world.</p>
+
+                    <p><strong>The impact on productivity is undeniable.</strong> Studies show that developers using AI tools can complete tasks 40% faster than those working in traditional ways. However, important concerns have also emerged about the quality and originality of AI-generated code.</p>
+
+                    <p>Experts warn that although AI can generate functional code quickly, developers must still deeply understand what the AI is suggesting. This is a perfect opportunity for programmers to focus on solving complex problems instead of writing repetitive code.</p>
+
+                    <p>Security is also a critical issue. As AI generates more code, the question arises: who is responsible if there is a failure or security vulnerability? Organizations are developing new policies and standards to ensure that AI-generated code meets the highest quality and security standards.</p>
+
+                    <p>In conclusion, AI is not replacing developers but rather changing the nature of their work. Future programmers will need different skills: not just writing code but also understanding, reviewing, and improving machine-generated code. This evolution represents both a challenge and a tremendous opportunity for the technology industry.</p>
+                `,
+          suggestedWords: [
+            "revolutionary",
+            "vulnerabilities",
+            "optimization",
+            "generative",
+          ],
+        },
+        2: {
+          title: "New Trade Agreement Between the United States and Europe",
+          category: "Business",
+          difficulty: "advanced",
+          date: "February 18, 2026",
+          readTime: 10,
+          content: `
+                    <p>After months of intense negotiations, negotiators from the United States and the European Union have reached a historic trade agreement expected to transform transatlantic commercial dynamics. The new treaty, called "TradeLink 2026," represents the largest bilateral free trade agreement of the 21st century.</p>
+
+                    <p>The agreement eliminates tariffs on more than 85,000 products and opens new opportunities for financial services, technology, and agriculture. According to preliminary calculations, this agreement could generate approximately 750 billion dollars in annual bilateral trade, positively impacting millions of consumers and businesses on both continents.</p>
+
+                    <p><strong>The main advantages for consumers include:</strong> lower prices on various products, greater variety of shopping options, and higher standards of safety and quality for imported products.</p>
+
+                    <p>However, not everyone celebrates the agreement. European farmers express concern about competition from cheaper American agricultural products. Similarly, some American manufacturing sectors fear competition from high-quality European products at competitive prices.</p>
+
+                    <p>Environmentalists have pointed out that although the treaty includes environmental protection clauses, these may be insufficient. They warn that multinational corporations could exploit regulatory "loopholes" to undermine environmental standards established in both regions.</p>
+
+                    <p>Despite concerns, both Washington and Brussels consider this treaty an important strategic step in a context of growing global competition. The agreement will send a clear message to China and other economic powers about Western unity and commitment to rules-based trade.</p>
+
+                    <p>The treaty will take effect in January 2027, after being ratified by the parliaments of both regions. Experts predict that the economic benefits will be gradual but significant in the medium and long term.</p>
+                `,
+          suggestedWords: ["bilateral", "tariffs", "dynamics", "consensus"],
+        },
+        3: {
+          title: "Revolutionary Breakthrough in Regenerative Medicine",
+          category: "Science",
+          difficulty: "intermediate",
+          date: "February 17, 2026",
+          readTime: 7,
+          content: `
+                    <p>An international team of scientists has achieved a historic breakthrough in regenerative medicine by successfully regenerating fully functional heart tissue using modified stem cells. This discovery, published in the prestigious journal 'Nature Medicine,' promises to revolutionize the treatment of heart disease, the number one cause of death in the world.</p>
+
+                    <p>The process, developed over six years of intensive research, involves taking stem cells from the patient's own bone marrow, genetically modifying them to promote heart tissue growth, and then implanting them in the damaged area of the heart. In animal trials, researchers observed that the regenerated tissue integrated perfectly with existing heart muscle.</p>
+
+                    <p><strong>Why is this so important?</strong> Currently, the only definitive treatment for advanced heart failure is heart transplantation, but there is a critical shortage of available organs. This new treatment could potentially save millions of lives.</p>
+
+                    <p>The lead researchers, Dr. James Chen from Stanford University and Dr. Maria Garcia from Barcelona University Hospital, explained that the next step is to obtain approval from regulatory authorities to begin human clinical trials. These trials could begin within two to three years.</p>
+
+                    <p>However, several challenges remain to be solved. The cost of this procedure is currently very high, approximately $500,000 per patient. Scientists are working to reduce these costs through process automation and mass production of modified cells.</p>
+
+                    <p>The ethical implications are also significant. Bioethicists are debating issues such as equitable access to treatment and full informed consent from patients. Despite these challenges, hope is palpable in the global medical community.</p>
+
+                    <p>This discovery represents a perfect example of how scientific dedication and international collaboration can produce advances that have the potential to transform modern medicine and improve the quality of life for millions of people around the world.</p>
+                `,
+          suggestedWords: ["regenerative", "modified", "shortage", "ethical"],
+        },
+      };
+
+      function loadArticle() {
+        const loading = document.getElementById("article-loading");
+        const main = document.getElementById("article-main");
+        const error = document.getElementById("article-error");
+
+        if (!articleId || !articleContents[articleId]) {
+          loading.style.display = "none";
+          error.style.display = "block";
+          return;
+        }
+
+        const article = articleContents[articleId];
+
+        // Populate article
+        document.getElementById("article-title").textContent = article.title;
+        document.getElementById("article-date").textContent = article.date;
+        document.getElementById("article-time").textContent =
+          article.readTime + " min";
+
+        // Count words
+        const wordCount = article.content
+          .replace(/<[^>]*>/g, "")
+          .split(/\s+/).length;
+        document.getElementById("article-words").textContent =
+          wordCount + " words";
+
+        // Badges
+        const badgesHtml = `
+                <span class="badge badge-category">${article.category}</span>
+                <span class="badge badge-difficulty ${article.difficulty}">${capitalizeFirst(article.difficulty)}</span>
+            `;
+        document.getElementById("article-badges").innerHTML = badgesHtml;
+
+        // Content
+        document.getElementById("article-body").innerHTML = article.content;
+
+        // Suggested words
+        const suggestedWordsHtml = article.suggestedWords
+          .map(
+            (word) =>
+              `<button class="vocab-button" onclick="searchWord('${word}')">${word}</button>`,
+          )
+          .join(" ");
+        document.getElementById("suggested-words").innerHTML =
+          suggestedWordsHtml;
+
+        // Hide loading, show main
+        loading.style.display = "none";
+        main.style.display = "block";
+
+        // Add double-click event for words
+        setupWordSelection();
+      }
+
+      function setupWordSelection() {
+        const content = document.getElementById("article-body");
+        content.addEventListener("click", function (e) {
+          if (e.detail === 2) {
+            // Double click
+            const selection = window.getSelection();
+            const word = selection.toString().trim();
+            if (word && word.length > 2) {
+              showWordPopup(word);
+            }
+          }
+        });
+      }
+
+      function showWordPopup(word) {
+        const popup = document.getElementById("wordPopup");
+        document.getElementById("popup-word").textContent = word;
+        document.getElementById("popup-definition").textContent =
+          "Searching for definition...";
+        popup.style.display = "block";
+
+        // Search for definition in API
+        fetchWordDefinition(word).then((def) => {
+          if (def) {
+            const definition =
+              def.definitions[0]?.definition || "Definition not available";
+            document.getElementById("popup-definition").textContent =
+              definition;
+          } else {
+            document.getElementById("popup-definition").textContent =
+              "Definition not available";
+          }
+        });
+      }
+
+      function closeWordPopup() {
+        document.getElementById("wordPopup").style.display = "none";
+      }
+
+      function addToVocabulary() {
+        const word = document.getElementById("popup-word").textContent;
+        alert(`"${word}" has been added to your vocabulary!`);
+        // In a real app, save to database here
+        closeWordPopup();
+      }
+
+      function searchWord(word) {
+        showWordPopup(word);
+      }
+
+      function capitalizeFirst(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+      }
+
+      // Load article on page load
+      document.addEventListener("DOMContentLoaded", function () {
+        checkAuth();
+        loadArticle();
+      });
+
+      // Close popup when clicking outside
+      document.addEventListener("click", function (e) {
+        const popup = document.getElementById("wordPopup");
+        if (!popup.contains(e.target) && e.target.tagName !== "BUTTON") {
+          if (popup.style.display === "block") {
+            closeWordPopup();
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
